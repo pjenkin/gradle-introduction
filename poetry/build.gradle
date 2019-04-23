@@ -1,0 +1,32 @@
+/*
+ Compile Java
+ Run tests
+ Copy static resources
+ Format test results
+ build a JAR
+*/
+// NB no semicolon line endings in Groovy
+
+apply plugin: 'java'    // NB apply plugin must be first https://stackoverflow.com/a/23800903/11365317
+
+repositories {
+    // jcenter()
+    // could be local
+    mavenCentral()
+}
+
+
+// gradle/groovy may insist on block curly braces starting on same line as statement
+
+dependencies {
+  compile 'commons-codec:commons-codec:1.6'
+  // use & fetch Maven-style compile-time (& run-time) dependencies
+}
+
+
+
+task caesar(type: JavaExec) {  // task inheriting from JavaExec - build an executable
+  main = 'org.gradle.poetry.Poetry'
+  classpath = sourceSets.main.runtimeClasspath
+  // classpath = runtimeClasspath in video - Youtube comments helped (!)
+}

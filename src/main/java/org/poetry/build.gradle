@@ -1,9 +1,0 @@
-/*
- Compile Java
- Run tests
- Copy static resources
- Format test results
- build a JAR
-*/
-
-apply plugin: 'java'
