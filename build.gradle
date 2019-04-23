@@ -7,8 +7,27 @@
 
 
 
-task helloWorld
+task hello
+task world
 
+world{
+  doLast {
+    println "world"
+  }
+}
+
+hello
+{
+  doLast
+  {
+    println "Hello "
+  }
+}
+// NB run gradle -q mytask for quiet, non-verbose output
+
+
+/*
+// defined tasks can be run eg "gradle helloWorld"
 helloWorld
 {
   doLast
@@ -16,3 +35,4 @@ helloWorld
     println "Hello world"
   }
 }
+*/
