@@ -29,8 +29,8 @@ public String encode(String text)
 // iterate through all lines
   public void emit(List<String> lines) {
     for (String line: lines) {
-      //System.out.println(codec.encode(line));
-      System.out.println(line);
+      System.out.println(encode(line));
+      //System.out.println(line);
     }
   }
 
@@ -38,6 +38,8 @@ public String encode(String text)
     Poetry p = new Poetry();
 
     System.out.println("Start");
+    //p.emit(p.encode((p.caesar())).toString());
+    // not a great tutorial
     p.emit(p.caesar());
     System.out.println("Finish");
   }
