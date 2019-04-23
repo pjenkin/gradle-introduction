@@ -2,7 +2,10 @@
 /*
 * https://www.youtube.com/watch?v=OFUEb7pLLXw
 * A task is an object - a task has an API - has a list of activities
-*
+* tasks form a Directed Acyclis Graph - graph of dependencies built before build executed
+* acyclic in that a cirle of A on B and B on A will be detected & warned-of
+* graph listed during 'configuration phase'
+* trying to have build code delcarative rather than imperative
 */
 
 
@@ -19,6 +22,7 @@ task helloWorld {   // declaration & definition of task
 // define task
 world {
   dependsOn << hello
+  // dependsOn property is a collection so << adding, as opposed to = assign 
   doLast {
     println "world"
   }
