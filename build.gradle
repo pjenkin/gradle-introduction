@@ -7,10 +7,18 @@
 
 
 
-task hello
+task hello    // declare task
 task world
 
-world{
+task helloWorld {   // declaration & definition of task
+  dependsOn = [world, hello]
+}
+// NB gradle hW would run helloWorld
+
+
+// define task
+world {
+  dependsOn << hello
   doLast {
     println "world"
   }
@@ -18,9 +26,8 @@ world{
 
 hello
 {
-  doLast
-  {
-    println "Hello "
+  doLast  {
+    print "Hello "
   }
 }
 // NB run gradle -q mytask for quiet, non-verbose output
