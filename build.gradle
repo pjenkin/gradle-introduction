@@ -1,10 +1,18 @@
 
 /*
 * https://www.youtube.com/watch?v=OFUEb7pLLXw
-* A task is an object
+* A task is an object - a task has an API - has a list of activities
 *
 */
 
 
 
 task helloWorld
+
+helloWorld
+{
+  doLast
+  {
+    println "Hello world"
+  }
+}
