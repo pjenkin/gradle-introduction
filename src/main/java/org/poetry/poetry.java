@@ -1,8 +1,10 @@
-package org.gradle.poetry
+package org.gradle.poetry;
+
+import java.util.*;
 
 public class Poetry {
 
-  public List caesar()
+  public List<String> caesar()
   {
     List<String> lines = new ArrayList<String>();
     lines.add("Infamy! They've all got it infamy!");
@@ -11,9 +13,11 @@ public class Poetry {
     return lines;
   }
 
+// iterate through all lines
   public void emit(List<String> lines) {
     for (String line: lines) {
-      System.out.println(codec.encode(line));
+      //System.out.println(Codec.encode(line));
+      System.out.println(line);
     }
   }
 
